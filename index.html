@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <style>
+      html {
+        background-color: #eee;
+        background-image: url("images/hilzinger.png");
+        background-repeat: no-repeat;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1. Load the webchat.js bundle via a script tag -->
+    <!-- 
+      ROBIN: 
+      I changed the import path to 2.40.6.
+      
+      2.40.0 brought a "native adaptivecards plugin" which works 
+      the same way as the one you imported before, so importing it 
+      is no longer necessary using 2.40 and up.
+      
+      Until 2.40.6 we introduced some fixes related to preventing 
+      malformed message data to be sent and adaptivecards submit
+      payloads to be incomplete.
+    -->
+    <script src="https://github.com/Cognigy/WebchatWidget/releases/download/v2.40.6/webchat.js"></script>
+    <!-- Load Webchat Plugins via a script tag -->
+    <script src="https://github.com/Cognigy/WebchatWidget/releases/latest/download/webchat.js"></script>
+    <script>
+      initWebchat(
+        "https://usc1-sta.endpoint.aiflow.avayacloud.com/cb130285d862b88f2647206e936c1d04fd83a9e9bc0e9213dea6e625ddb138f2",
+        {
+          settings: {
+            disableBranding: true,
+            designTemplate: 2
+          }
+        }
+      );
+    </script>
+  </body>
+</html>
